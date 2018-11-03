@@ -11,8 +11,8 @@ public class PlayerBehavior : MonoBehaviour {
 	public bool dashIsCharging;
 	public bool dashIsCooling;
 	public bool dashUsedThisJump;
-	public float dashTime;
 	public float dashForce;
+	public static float playerHealth;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,6 +23,7 @@ public class PlayerBehavior : MonoBehaviour {
 		dashForce = 2500;
 		playerRB.mass = 2.5F;
 		playerRB.gravityScale = 2;
+		playerHealth = 100;
 	}
 	
 	// Update is called once per frame
@@ -47,6 +48,7 @@ public class PlayerBehavior : MonoBehaviour {
 	}
 
 	public void dash(){
+		playerRB.velocity = Vector2.zero;
 		if(Input.GetAxis("Horizontal") > 0){
 			playerRB.AddForce(transform.right*dashForce);
 		}
