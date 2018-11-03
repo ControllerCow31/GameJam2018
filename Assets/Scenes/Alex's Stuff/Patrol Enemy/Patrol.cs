@@ -6,7 +6,8 @@ public class Patrol : MonoBehaviour {
 	private float speed;
 	public float distance;
     public GameObject particleEffect;
-
+    public float enemyHealth = 10;
+    public GameObject player;
 
 	private bool movingRight = true;
 
@@ -18,7 +19,7 @@ public class Patrol : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Translate(Vector2.right * speed * Time.deltaTime);
+		transform.Translate(Vector2.left * speed * Time.deltaTime);
 
 		RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
 
@@ -42,7 +43,7 @@ public class Patrol : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.layer != 8)
+        if (other.gameObject.tag == "Player")
         {
             HurtEnemy();
         }
@@ -51,5 +52,11 @@ public class Patrol : MonoBehaviour {
     void HurtEnemy()
     {
         Instantiate(particleEffect, transform.position, Quaternion.identity);
+        enemyHealth -= 5;
+
+        if (enemyHealth == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
