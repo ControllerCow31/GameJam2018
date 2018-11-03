@@ -13,6 +13,7 @@ public class NewMovement : MonoBehaviour {
     public bool dashIsCharging;
     public bool dashIsCooling;
     public bool dashUsedThisJump;
+    public static bool currentlyDashing;
     public float dashTime;
     public float dashForce;
     public float cameraShakeMagnitude;
@@ -22,6 +23,7 @@ public class NewMovement : MonoBehaviour {
     void Start() {
         playerRB = GetComponent<Rigidbody2D>();
         dashSound = GetComponent<AudioSource>();
+        currentlyDashing = false;
         grounded = false;
         dashIsCharging = false;
         playerRB.mass = 2.5F;
@@ -36,7 +38,11 @@ public class NewMovement : MonoBehaviour {
         }
 
         if (Input.GetKey(KeyCode.Space) && dashIsCooling == false && dashUsedThisJump == false) {
+            currentlyDashing = true;
+            Debug.Log("currentlyDashing = " + currentlyDashing);
             dash();
+            currentlyDashing = false;
+            Debug.Log("currentlyDashing = " + currentlyDashing);
         }
     }
     public void OnCollisionEnter2D(Collision2D other) {
