@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  distance: 1
 --- !u!1001 &1761862362
 Prefab:
   m_ObjectHideFlags: 0
