@@ -53,6 +53,7 @@ public class NewMovement : MonoBehaviour {
     }
 
     public void dash() {
+        playerRB.velocity = Vector2.zero;
         if (Input.GetAxis("Horizontal") > 0) {
             playerRB.AddForce(transform.right * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));

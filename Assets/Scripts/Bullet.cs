@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-    public PlayerHealth playerHealth;
+    PlayerHealth playerHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +18,9 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.tag == "Player") {
             Debug.Log("Collided");
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             playerHealth.isDamaged = true;
+            Destroy(gameObject);
         }
     }
 }
