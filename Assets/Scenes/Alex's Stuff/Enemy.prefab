@@ -20,11 +20,26 @@ GameObject:
   m_Component:
   - component: {fileID: 4058768900115268}
   - component: {fileID: 212775145557385352}
-  - component: {fileID: 50808421390099050}
   - component: {fileID: 60580197156610380}
-  - component: {fileID: 114866115323161020}
+  - component: {fileID: 114079873637382192}
+  - component: {fileID: 50459492215110792}
   m_Layer: 0
   m_Name: Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1554996529055748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4699537208358406}
+  m_Layer: 0
+  m_Name: Ground Detection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,13 +52,27 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1331950736519034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1807.9739, y: 3.697319, z: 0}
+  m_LocalPosition: {x: -3.0004907, y: -0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4699537208358406}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50808421390099050
+--- !u!4 &4699537208358406
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554996529055748}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4058768900115268}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50459492215110792
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -90,7 +119,7 @@ PolygonCollider2D:
     - - {x: 0, y: 0.5}
       - {x: -0.4330127, y: -0.25000003}
       - {x: 0.43301272, y: -0.24999996}
---- !u!114 &114866115323161020
+--- !u!114 &114079873637382192
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,9 +127,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1331950736519034}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd6959007db50864d99dd7fe24e60a74, type: 3}
+  m_Script: {fileID: 11500000, guid: bbe53865f06b9a94fa3120b4bc6f6891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 5
+  groundDetection: {fileID: 4699537208358406}
 --- !u!212 &212775145557385352
 SpriteRenderer:
   m_ObjectHideFlags: 1
