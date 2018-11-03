@@ -54,6 +54,7 @@ public class NewMovement : MonoBehaviour {
 
     public void dash() {
         playerRB.velocity = Vector2.zero;
+        playerRB.gravityScale = 0;
         if (Input.GetAxis("Horizontal") > 0) {
             playerRB.AddForce(transform.right * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
@@ -88,6 +89,7 @@ public class NewMovement : MonoBehaviour {
     public IEnumerator dashCooldown() {
         yield return new WaitForSeconds(0.2F);
         playerRB.velocity = Vector2.zero;
+        playerRB.gravityScale = 3;
         yield return new WaitForSeconds(0.3F);
         dashIsCooling = false;
     }
