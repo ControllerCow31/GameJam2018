@@ -1237,6 +1237,31 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &440598640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1067692116593724, guid: 494aa3a199243ee40a74ee83dbf384b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1855042577}
+--- !u!50 &440598641
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 440598640}
+  m_BodyType: 1
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 2
 --- !u!1 &527893758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,6 +2108,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1993404089}
+    - target: {fileID: 20255285890310114, guid: 494aa3a199243ee40a74ee83dbf384b0,
+        type: 2}
+      propertyPath: m_Depth
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494aa3a199243ee40a74ee83dbf384b0, type: 2}
   m_IsPrefabAsset: 0
