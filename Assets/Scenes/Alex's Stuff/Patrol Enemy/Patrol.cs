@@ -42,7 +42,10 @@ public class Patrol : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        HurtEnemy();
+        if (other.gameObject.layer != 8)
+        {
+            HurtEnemy();
+        }
     }
 
     void HurtEnemy()
