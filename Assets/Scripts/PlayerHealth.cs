@@ -7,14 +7,14 @@ public class PlayerHealth : MonoBehaviour {
 
 
     public Slider healthSlider;
-    public float playerHealth = 100f;
+    public static float playerHealth = 100f;
     public float damage = 25f;
     public bool isDamaged;
 
 
     // Use this for initialization
     void Start () {
-
+        playerHealth = 100;
     }
 	
 	// Update is called once per frame

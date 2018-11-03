@@ -40,6 +40,10 @@ public class NewMovement : MonoBehaviour {
         }
     }
     public void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Enemy"){
+            PlayerHealth.playerHealth -= 10;
+            playerRB.AddForce(new Vector2(other.relativeVelocity.x * -20, 2));
+        }
         grounded = true;
         dashUsedThisJump = false;
     }
