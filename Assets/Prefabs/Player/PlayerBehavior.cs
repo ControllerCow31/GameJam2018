@@ -12,7 +12,6 @@ public class PlayerBehavior : MonoBehaviour {
 	public bool dashIsCooling;
 	public bool dashUsedThisJump;
 	public float dashTime;
-	public float startDashTime;
 	public float dashForce;
 	
 	// Use this for initialization
@@ -22,13 +21,13 @@ public class PlayerBehavior : MonoBehaviour {
 		speed = 5f;
 		dashIsCharging = false;
 		dashForce = 2500;
-		startDashTime = 0.2f;
+		playerRB.mass = 2.5F;
+		playerRB.gravityScale = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-
 		if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))&& grounded == true){
 			playerRB.AddForce(transform.up*1000);
 		}
@@ -36,6 +35,7 @@ public class PlayerBehavior : MonoBehaviour {
 		if(Input.GetKey(KeyCode.Space) && dashIsCooling == false && dashUsedThisJump == false){
 			dash();
 		}
+
 	}
 	public void OnCollisionEnter2D(Collision2D other){
 		grounded = true;
@@ -55,12 +55,13 @@ public class PlayerBehavior : MonoBehaviour {
 		}
 		if(Input.GetAxis("Vertical") > 0){
 			playerRB.AddForce(transform.up*dashForce);
+			dashUsedThisJump = true;
 		}
 		if(Input.GetAxis("Vertical") < 0){
 			playerRB.AddForce(transform.up*-dashForce);
+			dashUsedThisJump = true;
 		}
 		dashIsCooling = true;
-		dashUsedThisJump = true;
 		StartCoroutine(dashCooldown());
 	}
 
