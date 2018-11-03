@@ -42,6 +42,7 @@ public class EnemyFollow : MonoBehaviour {
         if (enemyHealth <= 0)
         {
             Instantiate(corpse, transform.position, Quaternion.Euler(180, 0, 0));
+            Destroy(gameObject);
         }
 
     }

@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: ae5220191f2800f45b20c0da011bba87
+guid: 88c252ae3efd7a54abe9bf9a14e449cf
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bloodParticles_0
-    21300002: bloodParticles_1
-    21300004: bloodParticles_2
+    21300000: enemyPterodactyl_0
+    21300002: enemyPterodactyl_1
+    21300004: enemyPterodactyl_2
+    21300006: enemyPterodactyl_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -87,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bloodParticles_0
+      name: enemyPterodactyl_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,19 +102,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f049f68fd46b924f86a464f3e339fd7
+      spriteID: ad7076028be83054eb89190ae1613b68
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bloodParticles_1
+      name: enemyPterodactyl_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 64
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,19 +122,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bac67aa153476a46b1e84922d8a4a58
+      spriteID: 70a6e89f6b3079345965ecac54464574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bloodParticles_2
+      name: enemyPterodactyl_2
       rect:
         serializedVersion: 2
-        x: 32
+        x: 128
         y: 0
-        width: 16
-        height: 16
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,7 +142,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 540b58a84e6cbd64e9fe331c648c99d8
+      spriteID: fb7372c05c2e35d4789ed4e5870fd00a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemyPterodactyl_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bb456450c214746949da32cd17d442
       vertices: []
       indices: 
       edges: []
@@ -149,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f12e86e659d82614ca53d29c12b7e9f5
+    spriteID: e0d29570e745dcb45bfddc95b254a4a0
     vertices: []
     indices: 
     edges: []
