@@ -13,7 +13,7 @@ public class NewMovement : MonoBehaviour {
     public bool dashIsCharging;
     public bool dashIsCooling;
     public bool dashUsedThisJump;
-    public static bool currentlyDashing;
+    public bool currentlyDashing;
     public float dashTime;
     public float dashForce;
     public float cameraShakeMagnitude;
@@ -41,8 +41,6 @@ public class NewMovement : MonoBehaviour {
             currentlyDashing = true;
             Debug.Log("currentlyDashing = " + currentlyDashing);
             dash();
-            currentlyDashing = false;
-            Debug.Log("currentlyDashing = " + currentlyDashing);
         }
     }
     public void OnCollisionEnter2D(Collision2D other) {
@@ -94,6 +92,8 @@ public class NewMovement : MonoBehaviour {
 
     public IEnumerator dashCooldown() {
         yield return new WaitForSeconds(0.2F);
+        currentlyDashing = false;
+        Debug.Log("currentlyDashing = " + currentlyDashing);
         playerRB.velocity = Vector2.zero;
         playerRB.gravityScale = 3;
         yield return new WaitForSeconds(0.3F);
