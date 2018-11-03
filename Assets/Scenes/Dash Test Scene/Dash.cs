@@ -11,12 +11,11 @@ public class Dash : MonoBehaviour {
     float dashTime;
     float moveHorizontal;
     float moveVertical;
-    bool isGrounded;
-    bool isDashing;
 
     public float moveSpeed;
     public float dashSpeed;
     public float startDashTime;
+    public float cameraShakeMagnitude;
 
     // Use this for initialization
     void Start () {
@@ -29,22 +28,6 @@ public class Dash : MonoBehaviour {
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            isGrounded = true;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 8)
-        {
-            isGrounded = false;
-        }
-    }
-
     void FixedUpdate()
     {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
@@ -54,34 +37,42 @@ public class Dash : MonoBehaviour {
 
         if (dashTime <= 0)
         {
+            //Limit use of dashes with timer
             dashTime = startDashTime;
             playerRigidBody.velocity = Vector2.zero;
         }
         else
         {
             dashTime -= Time.deltaTime;
-
+            //Dash Left & Right
             if (Input.GetButton("Horizontal") && Input.GetButtonDown("Jump"))
             {
                 if (moveHorizontal > 0)
                 {
                     playerRigidBody.velocity += Vector2.right * dashSpeed;
+                    StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
                 }
                 if (moveHorizontal < 0)
                 {
                     playerRigidBody.velocity += Vector2.left * dashSpeed;
+                    StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
                 }
             }
 
+            //Dash Up & Down
             if (Input.GetButton("Vertical") && Input.GetButtonDown("Jump"))
             {
                 if (moveVertical > 0)
                 {
                     playerRigidBody.velocity += Vector2.up * dashSpeed;
+                    StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
+
                 }
                 if (moveVertical < 0)
                 {
                     playerRigidBody.velocity += Vector2.down * dashSpeed;
+                    StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
+
                 }
             }
         }
