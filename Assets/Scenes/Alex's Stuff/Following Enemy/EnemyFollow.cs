@@ -8,6 +8,7 @@ public class EnemyFollow : MonoBehaviour {
     public GameObject enemy;
     public float enemyHealth = 10;
     public GameObject effect;
+    public GameObject corpse;
 
 	private Transform target;
 	// Use this for initialization
@@ -36,5 +37,12 @@ public class EnemyFollow : MonoBehaviour {
     void HurtEnemy()
     {
         Instantiate(effect, transform.position, Quaternion.identity);
+        enemyHealth -= 5;
+
+        if (enemyHealth <= 0)
+        {
+            Instantiate(corpse, transform.position, Quaternion.Euler(180, 0, 0));
+        }
+
     }
 }

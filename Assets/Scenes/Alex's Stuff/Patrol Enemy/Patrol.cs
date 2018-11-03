@@ -6,8 +6,8 @@ public class Patrol : MonoBehaviour {
 	private float speed;
 	public float distance;
     public GameObject particleEffect;
-    public float enemyHealth = 10;
-    public GameObject player;
+    public float enemyHealth = 10;  
+    public GameObject corpse;
 
 	private bool movingRight = true;
 
@@ -54,9 +54,10 @@ public class Patrol : MonoBehaviour {
         Instantiate(particleEffect, transform.position, Quaternion.identity);
         enemyHealth -= 5;
 
-        if (enemyHealth == 0)
+        if (enemyHealth <= 0)
         {
             Destroy(gameObject);
+            Instantiate(corpse, transform.position, Quaternion.Euler(180, 0, 0));
         }
     }
 }
