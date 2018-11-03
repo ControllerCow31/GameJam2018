@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 674254168de757641809c3dffcc69846
+guid: ae5220191f2800f45b20c0da011bba87
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cactusSpriteSheet1_0
-    21300002: cactusSpriteSheet1_1
+    21300000: bloodParticles_0
+    21300002: bloodParticles_1
+    21300004: bloodParticles_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -33,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -65,7 +66,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -76,7 +77,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -86,41 +87,61 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cactusSpriteSheet1_0
+      name: bloodParticles_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c79c92d607cf8b4f8d8e375ac7bca77
+      spriteID: 3f049f68fd46b924f86a464f3e339fd7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cactusSpriteSheet1_1
+      name: bloodParticles_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 16
         y: 0
-        width: 32
-        height: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c1fa2c5ed424d84a977dc5d44b1087a
+      spriteID: 3bac67aa153476a46b1e84922d8a4a58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bloodParticles_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540b58a84e6cbd64e9fe331c648c99d8
       vertices: []
       indices: 
       edges: []
@@ -128,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1d29d9ab2d55e5342aba76045a0c5ab9
+    spriteID: f12e86e659d82614ca53d29c12b7e9f5
     vertices: []
     indices: 
     edges: []
