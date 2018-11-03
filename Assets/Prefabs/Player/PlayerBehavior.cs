@@ -9,9 +9,10 @@ public class PlayerBehavior : MonoBehaviour {
 	public float speed;
 	public bool grounded;
 	public bool dashIsCharging;
+	public bool dashIsCooling;
+	public bool dashUsedThisJump;
 	public float dashTime;
-	public float startDashTime;
-	public float dashSpeed;
+	public float dashForce;
 	
 	// Use this for initialization
 	void Start () {
@@ -19,24 +20,26 @@ public class PlayerBehavior : MonoBehaviour {
 		grounded = false;
 		speed = 5f;
 		dashIsCharging = false;
-		dashSpeed = 50;
-		startDashTime = 0.2f;
+		dashForce = 2500;
+		playerRB.mass = 2.5F;
+		playerRB.gravityScale = 2;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-
-		if(Input.GetKeyDown(KeyCode.W) && grounded == true){
-			playerRB.AddForce(Vector2.up*1000);
+		if((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))&& grounded == true){
+			playerRB.AddForce(transform.up*1000);
 		}
 
-		if(Input.GetKey(KeyCode.Space)){
+		if(Input.GetKey(KeyCode.Space) && dashIsCooling == false && dashUsedThisJump == false){
 			dash();
 		}
+
 	}
 	public void OnCollisionEnter2D(Collision2D other){
 		grounded = true;
+		dashUsedThisJump = false;
 	}
 
 	public void OnCollisionExit2D(Collision2D other){
@@ -44,38 +47,28 @@ public class PlayerBehavior : MonoBehaviour {
 	}
 
 	public void dash(){
-		if (dashTime <= 0)
-        {
-            dashTime = startDashTime;
-            playerRB.velocity = Vector2.zero;
-        }
-        else
-        {
-            dashTime -= Time.deltaTime;
+		if(Input.GetAxis("Horizontal") > 0){
+			playerRB.AddForce(transform.right*dashForce);
+		}
+		if(Input.GetAxis("Horizontal") < 0){
+			playerRB.AddForce(transform.right*-dashForce);
+		}
+		if(Input.GetAxis("Vertical") > 0){
+			playerRB.AddForce(transform.up*dashForce);
+			dashUsedThisJump = true;
+		}
+		if(Input.GetAxis("Vertical") < 0){
+			playerRB.AddForce(transform.up*-dashForce);
+			dashUsedThisJump = true;
+		}
+		dashIsCooling = true;
+		StartCoroutine(dashCooldown());
+	}
 
-            if (Input.GetButton("Horizontal") && Input.GetButtonDown("Jump"))
-            {
-                if (Input.GetAxis("Horizontal") > 0)
-                {
-                    playerRB.velocity += Vector2.right * dashSpeed;
-                }
-                if (Input.GetAxis("Horizontal") < 0)
-                {
-                    playerRB.velocity += Vector2.left * dashSpeed;
-                }
-            }
-
-            if (Input.GetButton("Vertical") && Input.GetButtonDown("Jump"))
-            {
-                if (Input.GetAxis("Vertical") > 0)
-                {
-                    playerRB.velocity += Vector2.up * dashSpeed;
-                }
-                if (Input.GetAxis("Vertical") < 0)
-                {
-                    playerRB.velocity += Vector2.down * dashSpeed;
-                }
-            }
-        }
+	public IEnumerator dashCooldown(){
+		yield return new WaitForSeconds(0.2F);
+		playerRB.velocity = Vector2.zero;
+		yield return new WaitForSeconds(0.3F);
+		dashIsCooling = false;
 	}
 }
