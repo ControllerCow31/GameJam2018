@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour {
 	public Vector3 offset;
 	// Use this for initialization
 	void Start () {
-		offset = transform.position - player.transform.position;
+		offset = transform.position - new Vector3(player.transform.position.x, player.transform.position.y - 3);
 	}
 	
 	void LateUpdate () {
