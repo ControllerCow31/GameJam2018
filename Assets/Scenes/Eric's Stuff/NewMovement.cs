@@ -25,14 +25,14 @@ public class NewMovement : MonoBehaviour {
         grounded = false;
         dashIsCharging = false;
         playerRB.mass = 2.5F;
-        playerRB.gravityScale = 2;
+        playerRB.gravityScale = 3;
     }
 
     // Update is called once per frame
     void Update() {
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
         if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && grounded == true) {
-            playerRB.AddForce(transform.up * 1000);
+            playerRB.AddForce(transform.up * 2000);
         }
 
         if (Input.GetKey(KeyCode.Space) && dashIsCooling == false && dashUsedThisJump == false) {
