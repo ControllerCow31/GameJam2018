@@ -14,9 +14,9 @@ TagManager:
   - UI
   - 
   - 
+  - Environ
+  - 
   - Ground
-  - 
-  - 
   - 
   - 
   - 
@@ -41,6 +41,9 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 2267405683
+    locked: 0
+  - name: Mountain
+    uniqueID: 2277731537
     locked: 0
   - name: Default
     uniqueID: 0
