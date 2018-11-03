@@ -60,7 +60,7 @@ public class Dash : MonoBehaviour {
             if (Input.GetButton("Horizontal") && Input.GetButtonDown("Jump")) {
                 if (moveHorizontal > 0) {
                     playerRigidBody.AddForce(Vector2.right * moveSpeed * dashSpeed, ForceMode2D.Impulse);
-                    //playerRigidBody.velocity += Vector2.right * dashSpeed;
+                    playerRigidBody.velocity += Vector2.right * dashSpeed;
                     StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
                 }
                 if (moveHorizontal < 0) {
