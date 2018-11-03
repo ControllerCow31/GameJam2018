@@ -19,7 +19,7 @@ public class PlayerBehavior : MonoBehaviour {
 		transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
 
 		if(Input.GetKeyDown(KeyCode.W) && grounded == true){
-			playerRB.AddForce(transform.up*400);
+			playerRB.AddForce(transform.up*1000);
 		}
 	}
 	public void OnCollisionEnter2D(Collision2D other){
