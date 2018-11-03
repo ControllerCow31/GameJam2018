@@ -5,6 +5,8 @@ using UnityEngine;
 public class Patrol : MonoBehaviour {
 	private float speed;
 	public float distance;
+    public GameObject particleEffect;
+
 
 	private bool movingRight = true;
 
@@ -37,4 +39,14 @@ public class Patrol : MonoBehaviour {
 		
 
 	}
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        HurtEnemy();
+    }
+
+    void HurtEnemy()
+    {
+        Instantiate(particleEffect, transform.position, Quaternion.identity);
+    }
 }
