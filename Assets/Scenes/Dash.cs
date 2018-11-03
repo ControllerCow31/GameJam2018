@@ -16,6 +16,7 @@ public class Dash : MonoBehaviour {
     public float moveSpeed;
     public float dashSpeed;
     public float startDashTime;
+    public float timeBetweenDashes;
     public float cameraShakeMagnitude;
 
     // Use this for initialization
@@ -41,9 +42,11 @@ public class Dash : MonoBehaviour {
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         moveVertical = Input.GetAxisRaw("Vertical");
 
-        //Only have control when
         if (isGrounded) {
             transform.Translate(moveHorizontal * moveSpeed * Time.deltaTime, 0, 0);
+        }
+        if (moveVertical > 0 && isGrounded) { 
+            playerRigidBody.AddForce(Vector2.up * 10000);
         }
 
         if (dashTime <= 0) {
@@ -56,11 +59,13 @@ public class Dash : MonoBehaviour {
             //Dash Left & Right
             if (Input.GetButton("Horizontal") && Input.GetButtonDown("Jump")) {
                 if (moveHorizontal > 0) {
-                    playerRigidBody.velocity += Vector2.right * dashSpeed;
+                    playerRigidBody.AddForce(Vector2.right * moveSpeed * dashSpeed, ForceMode2D.Impulse);
+                    //playerRigidBody.velocity += Vector2.right * dashSpeed;
                     StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
                 }
                 if (moveHorizontal < 0) {
-                    playerRigidBody.velocity += Vector2.left * dashSpeed;
+                    playerRigidBody.AddForce(Vector2.left * moveSpeed * dashSpeed, ForceMode2D.Impulse);
+                    //playerRigidBody.velocity += Vector2.left * dashSpeed;
                     StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
                 }
             }
@@ -68,12 +73,14 @@ public class Dash : MonoBehaviour {
             //Dash Up & Down
             if (Input.GetButton("Vertical") && Input.GetButtonDown("Jump")) {
                 if (moveVertical > 0) {
-                    playerRigidBody.velocity += Vector2.up * dashSpeed;
+                    playerRigidBody.AddForce(Vector2.up * moveSpeed * dashSpeed, ForceMode2D.Impulse);
+                    //playerRigidBody.velocity += Vector2.up * dashSpeed;
                     StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
 
                 }
                 if (moveVertical < 0) {
-                    playerRigidBody.velocity += Vector2.down * dashSpeed;
+                    playerRigidBody.AddForce(Vector2.down * moveSpeed * dashSpeed, ForceMode2D.Impulse);
+                    //playerRigidBody.velocity += Vector2.down * dashSpeed;
                     StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
 
                 }
