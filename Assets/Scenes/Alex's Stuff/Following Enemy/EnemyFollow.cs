@@ -9,6 +9,9 @@ public class EnemyFollow : MonoBehaviour {
     public float enemyHealth = 10;
     public GameObject effect;
     public GameObject corpse;
+    public GameObject playerBlood;
+    public PlayerHealth health;
+    public GameObject player;
 
 	private Transform target;
 
@@ -45,7 +48,14 @@ public class EnemyFollow : MonoBehaviour {
 
         if (other.gameObject.tag == "Player")
         {
-            HurtEnemy();
+            if (other.gameObject.GetComponent<NewMovement>().currentlyDashing == true)
+            {
+                HurtEnemy();
+            }
+            else
+            {
+                HurtPlayer();
+            }
         }
         
     }
@@ -61,5 +71,12 @@ public class EnemyFollow : MonoBehaviour {
             Destroy(gameObject);
         }
 
+    }
+
+    void HurtPlayer()
+    {
+        Instantiate(playerBlood, player.transform.position, Quaternion.identity);
+
+        health.isDamaged = true;
     }
 }

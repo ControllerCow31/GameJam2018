@@ -7,9 +7,10 @@ public class PlayerHealth : MonoBehaviour {
 
 
     public Slider healthSlider;
-    public static float playerHealth = 100f;
-    public float damage = 25f;
+    public float playerHealth = 100f;
+    public float damage;
     public bool isDamaged;
+    public float graceTime = 1f;
 
 
     // Use this for initialization
@@ -28,4 +29,5 @@ public class PlayerHealth : MonoBehaviour {
         }
         isDamaged = false;
     }
+
 }

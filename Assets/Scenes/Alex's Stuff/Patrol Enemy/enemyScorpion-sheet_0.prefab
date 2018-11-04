@@ -163,6 +163,10 @@ MonoBehaviour:
     type: 2}
   enemyHealth: 10
   corpse: {fileID: 1628816464706022, guid: 49051e40115ec34448ffcd099415361e, type: 2}
+  health: {fileID: 0}
+  player: {fileID: 0}
+  playerBlood: {fileID: 1730743259841294, guid: d95aad01a28cdc04f894f3e61a9cdd10,
+    type: 2}
   groundDetection: {fileID: 4958693535571670}
 --- !u!212 &212068498866865366
 SpriteRenderer:
