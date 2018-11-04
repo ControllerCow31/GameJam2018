@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour {
 
-    public GameObject playerPrefab;
+    public PlayerKnockback playerKnock;
     public GameObject bulletPrefab;
     public float bulletVelocity;
     public int numberOfProjectiles = 8;
@@ -16,17 +16,26 @@ public class BossAttack : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        // Knockback the player when touching boss
         if (collision.gameObject.tag == "Player") {
+<<<<<<< HEAD
            // StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+=======
+<<<<<<< HEAD
+           StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+=======
+            StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
+>>>>>>> da0d47d91d686d90ea1627067eccd868350f62f3
+>>>>>>> 48b3840bfb7f051ee290b1323004741157a30e88
         }
     }
 
     // Update is called once per frame
     void Update () {
+        // Bullets are shot at set time intervals
         if (timeBetweenAttack <= 0) {
             spawnPos = transform.position;
             spawnProjectile(numberOfProjectiles);
@@ -37,6 +46,7 @@ public class BossAttack : MonoBehaviour {
         }
 	}
 
+    // Spawns bullets in a radial pattern
     void spawnProjectile(int numberOfProjectiles) {
         float angleStep = 360f / numberOfProjectiles;
         float angle = 0f;
@@ -53,17 +63,5 @@ public class BossAttack : MonoBehaviour {
 
             angle += angleStep;
         }
-    }
-
-    public IEnumerator Knockback(float knockBackDuration, float knockBackPower, Vector2 knockBackDirection) {
-        float timer = 0;
-
-        while (knockBackDuration < timer) {
-            timer += Time.deltaTime;
-            playerPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockBackDirection.x * -100, knockBackDirection.y * knockBackPower));
-        }
-
-        yield return null;
-
     }
 }

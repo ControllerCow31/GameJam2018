@@ -190,6 +190,7 @@ MonoBehaviour:
   playerHealth: 100
   damage: 25
   isDamaged: 0
+  graceTime: 1
 --- !u!114 &114304873879670908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,6 +209,7 @@ MonoBehaviour:
   dashIsCharging: 0
   dashIsCooling: 0
   dashUsedThisJump: 0
+  currentlyDashing: 0
   dashTime: 0.1
   dashForce: 1000
   cameraShakeMagnitude: 0.1
