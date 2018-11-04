@@ -24,11 +24,6 @@ public class BossAttack : MonoBehaviour {
 
             StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
 
-
-            //StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
-
-            StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
-
         }
     }
 
