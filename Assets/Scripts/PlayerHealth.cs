@@ -27,8 +27,10 @@ public class PlayerHealth : MonoBehaviour {
         }
         else {
             flashTimer -= Time.deltaTime;
+            if (health < 100) {
+                health += 0.075f;
+            }
 
-            health += 0.075f;
             if (flashTimer <= 0) {
                 sprite.color = Color.white;
                 flashTimer = 0.25f;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour {
-
+    public AudioClip bossDamage;
     public Slider bossHealthSlider;
     public float health = 100f;
     public float damage = 5f;
@@ -12,11 +12,13 @@ public class BossHealth : MonoBehaviour {
     float flashTimer = 0.25f;
     float gracePeriod = 1f;
 
+    AudioSource bossAudio;
     SpriteRenderer sprite;
 
     // Use this for initialization
     void Start () {
         sprite = GetComponent<SpriteRenderer>();
+        bossAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class BossHealth : MonoBehaviour {
             health -= damage;
             bossHealthSlider.value = health;
             sprite.color = Color.red;
+            bossAudio.PlayOneShot(bossDamage);
         }
         else {
             flashTimer -= Time.deltaTime;
