@@ -22,11 +22,12 @@ public class PlayerHealth : MonoBehaviour {
 	void Update () {
         if (isDamaged) {
             health -= damage;
-            healthSlider.value = health;
         }
         else {
-            healthSlider.value += .1f;
+            health += 0.075f;
         }
+
+        healthSlider.value = health;
         isDamaged = false;
     }
 
