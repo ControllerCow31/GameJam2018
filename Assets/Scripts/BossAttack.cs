@@ -22,10 +22,18 @@ public class BossAttack : MonoBehaviour {
         // Knockback the player when touching boss
         if (collision.gameObject.tag == "Player") {
 <<<<<<< HEAD
+            StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
+=======
+<<<<<<< HEAD
+           // StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+=======
+<<<<<<< HEAD
            StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
 =======
             StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
 >>>>>>> da0d47d91d686d90ea1627067eccd868350f62f3
+>>>>>>> 48b3840bfb7f051ee290b1323004741157a30e88
+>>>>>>> 744e542a9303754a68309489dd6ede3177d5422b
         }
     }
 

@@ -52,7 +52,6 @@ public class Patrol : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("collision works");
             if (other.gameObject.GetComponent<NewMovement>().currentlyDashing == true)
             {
                 HurtEnemy();
