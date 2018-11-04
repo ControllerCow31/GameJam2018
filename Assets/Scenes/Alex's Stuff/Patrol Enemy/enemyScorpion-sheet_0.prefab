@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534244743641388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 74.18, y: -3.86, z: 0}
+  m_LocalPosition: {x: 131.23541, y: -2.556333, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4958693535571670}
@@ -163,8 +163,8 @@ MonoBehaviour:
     type: 2}
   enemyHealth: 10
   corpse: {fileID: 1628816464706022, guid: 49051e40115ec34448ffcd099415361e, type: 2}
-  health: {fileID: 0}
-  player: {fileID: 0}
+  health: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
+  player: {fileID: 1144932962278882, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
   playerBlood: {fileID: 1730743259841294, guid: d95aad01a28cdc04f894f3e61a9cdd10,
     type: 2}
   groundDetection: {fileID: 4958693535571670}
