@@ -1409,11 +1409,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4795003931241932, guid: cdab6d6356a49b941bbc4eb590be9ee8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.45
+      value: 234.4
       objectReference: {fileID: 0}
     - target: {fileID: 4795003931241932, guid: cdab6d6356a49b941bbc4eb590be9ee8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4795003931241932, guid: cdab6d6356a49b941bbc4eb590be9ee8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1441,7 +1441,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1029727720755472, guid: cdab6d6356a49b941bbc4eb590be9ee8, type: 2}
       propertyPath: m_Name
-      value: Portal
+      value: PortalToBoss
+      objectReference: {fileID: 0}
+    - target: {fileID: 61787440357564488, guid: cdab6d6356a49b941bbc4eb590be9ee8,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdab6d6356a49b941bbc4eb590be9ee8, type: 2}
