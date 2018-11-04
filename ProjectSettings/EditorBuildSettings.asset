@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Emily's Stuff/Rough Level.unity
     guid: b6cc886d48e1baf4095f9642f204cccf
+  - enabled: 1
+    path: Assets/Scenes/Emily's Stuff/Boss.unity
+    guid: 3a767288d429ad44686af3c13326cbd6
   m_configObjects: {}

@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534244743641388}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.0661912, y: -1.9850004, z: 0}
+  m_LocalPosition: {x: 74.18, y: -3.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4958693535571670}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301844008810930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.242, y: -0.985, z: -0.09419165}
+  m_LocalPosition: {x: -1.04, y: -0.92, z: -0.09419165}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4678152407979210}
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbe53865f06b9a94fa3120b4bc6f6891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
+  distance: 0.5
   particleEffect: {fileID: 1730743259841294, guid: 05facfa59a7db264fac8692b90fe411a,
     type: 2}
   enemyHealth: 10
