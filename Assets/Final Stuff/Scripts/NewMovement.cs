@@ -10,7 +10,7 @@ public class NewMovement : MonoBehaviour {
 
     AudioSource playerSounds;
     Rigidbody2D playerRB;
-    public float speed = 2f;
+    public float speed;
     public bool grounded;
     public bool dashIsCharging;
     public bool dashIsCooling;
@@ -25,7 +25,7 @@ public class NewMovement : MonoBehaviour {
     void Start() {
         playerRB = GetComponent<Rigidbody2D>();
         playerSounds = GetComponent<AudioSource>();
-
+        speed = 5.5F;
         currentlyDashing = false;
         grounded = false;
         dashIsCharging = false;
