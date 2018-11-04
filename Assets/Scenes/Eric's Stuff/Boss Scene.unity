@@ -167,6 +167,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 531471832}
   health: {fileID: 19065148}
+  dashSound: {fileID: 8300000, guid: 8c7022592b198ca41abf309e6e9f4fdd, type: 3}
+  jumpSound: {fileID: 8300000, guid: 93d679d1938b05b4d8a04afd88b54343, type: 3}
   speed: 4
   grounded: 0
   dashIsCharging: 0
@@ -569,41 +571,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114085409304406736, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_Value
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 224168748042411040, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 114.37
-      objectReference: {fileID: 0}
-    - target: {fileID: 224168748042411040, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -16.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 224168748042411040, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 210.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 224168748042411040, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 32.97
-      objectReference: {fileID: 0}
-    - target: {fileID: 224760099283104314, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -5.0000076
-      objectReference: {fileID: 0}
-    - target: {fileID: 224686049437094186, guid: a526fff033fdd0549ad641f15c6429e2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: -5.0000076
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a526fff033fdd0549ad641f15c6429e2, type: 2}
@@ -1976,7 +1943,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c515a618a61f8ef4caa90617f7e0b491, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b10be4075dacbb7499890a3bcde6e0b2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
@@ -2087,6 +2054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 19065148}
+  bossHealth: {fileID: 1953412947}
 --- !u!1 &955498963
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,11 +2223,6 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224618352311165464, guid: 91a258bef40ae78439910386445670d2,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 19.599976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91a258bef40ae78439910386445670d2, type: 2}
@@ -3110,6 +3073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bossHealthSlider: {fileID: 109948236}
+  health: 100
   damage: 5
   isDamaged: 0
 --- !u!58 &1953412948

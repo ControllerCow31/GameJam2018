@@ -5,8 +5,10 @@ using UnityEngine;
 public class NewMovement : MonoBehaviour {
     public CameraShake cameraShake;
     public PlayerHealth health;
+    public AudioClip dashSound;
+    public AudioClip jumpSound;
 
-    AudioSource dashSound;
+    AudioSource playerSounds;
     Rigidbody2D playerRB;
     public float speed = 2f;
     public bool grounded;
@@ -22,7 +24,8 @@ public class NewMovement : MonoBehaviour {
     // Use this for initialization
     void Start() {
         playerRB = GetComponent<Rigidbody2D>();
-        dashSound = GetComponent<AudioSource>();
+        playerSounds = GetComponent<AudioSource>();
+
         currentlyDashing = false;
         grounded = false;
         dashIsCharging = false;
@@ -33,8 +36,9 @@ public class NewMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-        if ((Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && grounded == true) {
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("up") && grounded == true)) {
             playerRB.AddForce(transform.up * 2000);
+            playerSounds.PlayOneShot(jumpSound);
         }
 
         if (Input.GetKey(KeyCode.Space) && dashIsCooling == false && dashUsedThisJump == false) {
@@ -61,25 +65,25 @@ public class NewMovement : MonoBehaviour {
         if (Input.GetAxis("Horizontal") > 0) {
             playerRB.AddForce(transform.right * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
-            dashSound.Play();
+            playerSounds.Play();
             
         }
         if (Input.GetAxis("Horizontal") < 0) {
             playerRB.AddForce(transform.right * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
-            dashSound.Play();
+            playerSounds.Play();
         }
         if (Input.GetAxis("Vertical") > 0) {
             playerRB.AddForce(transform.up * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
-            dashSound.Play();
+            playerSounds.Play();
 
             dashUsedThisJump = true;
         }
         if (Input.GetAxis("Vertical") < 0) {
             playerRB.AddForce(transform.up * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
-            dashSound.Play();
+            playerSounds.Play();
 
             dashUsedThisJump = true;
         }

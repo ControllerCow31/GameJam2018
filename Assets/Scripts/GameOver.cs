@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOver : MonoBehaviour {
 
     public PlayerHealth playerHealth;
+    public BossHealth bossHealth;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +17,10 @@ public class GameOver : MonoBehaviour {
 	void Update () {
         if (playerHealth.health <= 0) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+        if (bossHealth.health <= 0) {
+            //You win!!
         }
 	}
 }
