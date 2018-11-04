@@ -292,7 +292,7 @@ MonoBehaviour:
   health: {fileID: 114973557820418514}
   dashSound: {fileID: 0}
   jumpSound: {fileID: 0}
-  speed: 4
+  speed: 25
   grounded: 0
   dashIsCharging: 0
   dashIsCooling: 0
