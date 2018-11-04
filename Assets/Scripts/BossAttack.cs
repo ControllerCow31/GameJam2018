@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BossAttack : MonoBehaviour {
 
+    public GameObject playerPrefab;
     public GameObject bulletPrefab;
     public float bulletVelocity;
     public int numberOfProjectiles = 8;
@@ -17,9 +18,15 @@ public class BossAttack : MonoBehaviour {
 	void Start () {
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.tag == "Player") {
+            StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
         if (timeBetweenAttack <= 0) {
             spawnPos = transform.position;
             spawnProjectile(numberOfProjectiles);
@@ -46,5 +53,17 @@ public class BossAttack : MonoBehaviour {
 
             angle += angleStep;
         }
+    }
+
+    public IEnumerator Knockback(float knockBackDuration, float knockBackPower, Vector2 knockBackDirection) {
+        float timer = 0;
+
+        while (knockBackDuration < timer) {
+            timer += Time.deltaTime;
+            playerPrefab.GetComponent<Rigidbody2D>().AddForce(new Vector2(knockBackDirection.x * -100, knockBackDirection.y * knockBackPower));
+        }
+
+        yield return null;
+
     }
 }
