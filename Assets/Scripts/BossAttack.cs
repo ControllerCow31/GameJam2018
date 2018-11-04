@@ -21,7 +21,14 @@ public class BossAttack : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D collision) {
         // Knockback the player when touching boss
         if (collision.gameObject.tag == "Player") {
+
             StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
+
+
+            //StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+
+            StartCoroutine(playerKnock.Knockback(0.02f, 250, playerKnock.transform.position));
+
         }
     }
 
