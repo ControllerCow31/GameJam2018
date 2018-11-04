@@ -26,11 +26,8 @@ public class PlayerHealth : MonoBehaviour {
             sprite.color = Color.red;
         }
         else {
-<<<<<<< HEAD
             flashTimer -= Time.deltaTime;
-=======
-            healthSlider.value += .1f;
->>>>>>> d4152b155c02848d1d0621d4b89fb8668c20c858
+
             health += 0.075f;
             if (flashTimer <= 0) {
                 sprite.color = Color.white;
