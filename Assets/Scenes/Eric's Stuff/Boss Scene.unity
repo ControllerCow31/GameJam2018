@@ -231,6 +231,11 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114085409304406736, guid: a526fff033fdd0549ad641f15c6429e2,
+        type: 2}
+      propertyPath: m_Value
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a526fff033fdd0549ad641f15c6429e2, type: 2}
   m_IsPrefabAsset: 0
@@ -718,6 +723,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 19065147}
+    - target: {fileID: 114138750704601708, guid: 494aa3a199243ee40a74ee83dbf384b0,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 19065147}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 494aa3a199243ee40a74ee83dbf384b0, type: 2}
   m_IsPrefabAsset: 0
@@ -1161,6 +1171,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &531471832 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114344342457999792, guid: 494aa3a199243ee40a74ee83dbf384b0,
+    type: 2}
+  m_PrefabInternal: {fileID: 397547726}
+  m_Script: {fileID: 11500000, guid: cc650754dfea3e2408201c941f2bd7d7, type: 3}
 --- !u!1 &671226526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,7 +1750,7 @@ Prefab:
         type: 2}
       propertyPath: cameraShake
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 531471832}
     - target: {fileID: 114131718952293012, guid: 0f1bc7b21997bd44f996ec052b20f408,
         type: 2}
       propertyPath: healthSlider
@@ -2421,6 +2437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be6bd7e4f7de6d746b3ad9953490a081, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 19065147}
   bulletPrefab: {fileID: 1000981893965324, guid: 20cae656b161f71429f29b6a47f7f895,
     type: 2}
   bulletVelocity: 3
