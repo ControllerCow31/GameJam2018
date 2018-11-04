@@ -36,7 +36,7 @@ public class NewMovement : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0, 0);
-        if ((Input.GetKeyDown("w") || Input.GetKeyDown("up") && grounded == true)) {
+        if ((Input.GetKeyDown("w") || Input.GetKeyDown("up")) && grounded == true) {
             playerRB.AddForce(transform.up * 2000);
             playerSounds.PlayOneShot(jumpSound);
         }
@@ -48,9 +48,6 @@ public class NewMovement : MonoBehaviour {
         }
     }
     public void OnCollisionEnter2D(Collision2D other) {
-        if(other.gameObject.tag == "Enemy"){
-            playerRB.AddForce(new Vector2(other.relativeVelocity.x * -20, 2));
-        }
         grounded = true;
         dashUsedThisJump = false;
     }
@@ -66,26 +63,33 @@ public class NewMovement : MonoBehaviour {
             playerRB.AddForce(transform.right * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-            
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Horizontal") < 0) {
             playerRB.AddForce(transform.right * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Vertical") > 0) {
             playerRB.AddForce(transform.up * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-
-            dashUsedThisJump = true;
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Vertical") < 0) {
             playerRB.AddForce(transform.up * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-
-            dashUsedThisJump = true;
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
     
         dashIsCooling = true;
