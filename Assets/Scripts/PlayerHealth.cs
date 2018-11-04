@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour {
             health -= damage;
         }
         else {
+            healthSlider.value += .1f;
             health += 0.075f;
         }
 
