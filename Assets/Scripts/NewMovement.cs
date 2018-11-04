@@ -63,26 +63,33 @@ public class NewMovement : MonoBehaviour {
             playerRB.AddForce(transform.right * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-            
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Horizontal") < 0) {
             playerRB.AddForce(transform.right * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Vertical") > 0) {
             playerRB.AddForce(transform.up * dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-
-            dashUsedThisJump = true;
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
         if (Input.GetAxis("Vertical") < 0) {
             playerRB.AddForce(transform.up * -dashForce);
             StartCoroutine(cameraShake.Shake(dashTime, cameraShakeMagnitude));
             playerSounds.Play();
-
-            dashUsedThisJump = true;
+            if(grounded == false){
+                dashUsedThisJump = true;
+            }
         }
     
         dashIsCooling = true;
