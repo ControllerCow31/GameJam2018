@@ -23,11 +23,12 @@ GameObject:
   - component: {fileID: 50670356417588482}
   - component: {fileID: 58280065351612982}
   - component: {fileID: 82129440809304552}
+  - component: {fileID: 114902982613549584}
   - component: {fileID: 114304873879670908}
   - component: {fileID: 114131718952293012}
   m_Layer: 0
   m_Name: PlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthSlider: {fileID: 0}
-  playerHealth: 100
+  health: 100
   damage: 25
   isDamaged: 0
   graceTime: 1
@@ -204,6 +205,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraShake: {fileID: 0}
   health: {fileID: 114131718952293012}
+  dashSound: {fileID: 8300000, guid: 8c7022592b198ca41abf309e6e9f4fdd, type: 3}
+  jumpSound: {fileID: 8300000, guid: 93d679d1938b05b4d8a04afd88b54343, type: 3}
   speed: 4
   grounded: 0
   dashIsCharging: 0
@@ -214,6 +217,17 @@ MonoBehaviour:
   dashForce: 1000
   cameraShakeMagnitude: 0.1
   dashed: 0
+--- !u!114 &114902982613549584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1900770911574120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96578583384f2f84eb595f43e67e0b78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212535842579270002
 SpriteRenderer:
   m_ObjectHideFlags: 1
