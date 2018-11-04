@@ -21,7 +21,7 @@ public class BossAttack : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Player") {
-            StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
+           StartCoroutine(playerPrefab.Knockback(0.02f, 350f,playerPrefab.transform));
         }
     }
 
