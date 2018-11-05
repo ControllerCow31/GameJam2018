@@ -7,6 +7,7 @@ public class GameOver : MonoBehaviour {
 
     public PlayerHealth playerHealth;
     public BossHealth bossHealth;
+    public GameObject victoryScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +21,8 @@ public class GameOver : MonoBehaviour {
         }
 
         if (bossHealth.health <= 0) {
-            //You win!!
+            Time.timeScale = 0.0f;
+            victoryScreen.SetActive(true);
         }
 	}
 }

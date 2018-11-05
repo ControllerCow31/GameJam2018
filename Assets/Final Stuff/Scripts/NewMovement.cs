@@ -31,6 +31,10 @@ public class NewMovement : MonoBehaviour {
         dashIsCharging = false;
         playerRB.mass = 2.5F;
         playerRB.gravityScale = 3;
+
+        if (Time.timeScale != 1.0f) {
+            Time.timeScale = 1.0f;
+        }
     }
 
     // Update is called once per frame

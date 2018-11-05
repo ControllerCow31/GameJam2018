@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BossHealth : MonoBehaviour {
     public AudioClip bossDamage;
+    public SpriteRenderer sprite;
     public Slider bossHealthSlider;
     public float health = 100f;
     public float damage = 5f;
@@ -13,11 +14,9 @@ public class BossHealth : MonoBehaviour {
     float gracePeriod = 1f;
 
     AudioSource bossAudio;
-    SpriteRenderer sprite;
 
     // Use this for initialization
     void Start () {
-        sprite = GetComponent<SpriteRenderer>();
         bossAudio = GetComponent<AudioSource>();
     }
 
@@ -46,7 +45,7 @@ public class BossHealth : MonoBehaviour {
                 isDamaged = true;
             }
             else {
-                collision.gameObject.GetComponent<PlayerHealth>().isDamaged = true;
+                //collision.gameObject.GetComponent<PlayerHealth>().isDamaged = true;
             }
         }
     }

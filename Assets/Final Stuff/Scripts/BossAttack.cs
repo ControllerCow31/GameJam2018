@@ -8,14 +8,18 @@ public class BossAttack : MonoBehaviour {
     public GameObject bulletPrefab;
     public float bulletVelocity;
     public int numberOfProjectiles = 8;
-    public float timeBetweenAttack = 1f;
+    public float timeBetweenAttack = 3f;
 
     const float radius = 1f;
     Vector2 spawnPos;
+    Animator anim;
+    SpriteRenderer bossSprite;
 
 
 	// Use this for initialization
 	void Start () {
+        anim = GetComponent<Animator>();
+        bossSprite = GetComponent<SpriteRenderer>();
 	}
 
     private void OnCollisionEnter2D(Collision2D collision) {
@@ -31,14 +35,19 @@ public class BossAttack : MonoBehaviour {
     void Update () {
         // Bullets are shot at set time intervals
         if (timeBetweenAttack <= 0) {
+            anim.SetBool("isAttacking", true);
             spawnPos = transform.position;
             spawnProjectile(numberOfProjectiles);
             timeBetweenAttack = 3f;
         }
         else {
             timeBetweenAttack -= Time.deltaTime;
+
+            if (this.anim.GetCurrentAnimatorStateInfo(0).IsName("Boss_Attack")) {
+                anim.SetBool("isAttacking", false);
+            }
         }
-	}
+    }
 
     // Spawns bullets in a radial pattern
     void spawnProjectile(int numberOfProjectiles) {
