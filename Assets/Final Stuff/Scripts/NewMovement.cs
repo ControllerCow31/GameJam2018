@@ -51,7 +51,7 @@ public class NewMovement : MonoBehaviour {
             dash();
         }
     }
-    public void OnCollisionEnter2D(Collision2D other) {
+    public void OnCollisionStay2D(Collision2D other) {
         grounded = true;
         dashUsedThisJump = false;
     }
