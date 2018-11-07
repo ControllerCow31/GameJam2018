@@ -39,7 +39,6 @@ public class Patrol : MonoBehaviour {
 
 		if (groundInfo.collider == false)
 		{
-			Debug.Log("what2");
 			if (movingRight == true)
 			{
 				transform.eulerAngles = new Vector3(0, -180, 0);
@@ -92,7 +91,6 @@ public class Patrol : MonoBehaviour {
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		Debug.Log("what");
 		if (collision.gameObject.tag != "Player")
 		{
 			if (movingRight == false)
