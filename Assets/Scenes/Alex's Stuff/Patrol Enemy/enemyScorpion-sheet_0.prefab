@@ -26,22 +26,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1419950317736578
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4200550357790004}
-  - component: {fileID: 61496111627841926}
-  m_Layer: 0
-  m_Name: Wall Collision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1534244743641388
 GameObject:
   m_ObjectHideFlags: 0
@@ -62,31 +46,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4200550357790004
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419950317736578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.999, y: -0.792, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4678152407979210}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4678152407979210
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1534244743641388}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -175.01, y: 5.6800003, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 131.23541, y: -2.556333, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4958693535571670}
-  - {fileID: 4200550357790004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1301844008810930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.085, y: -0.871, z: -0.09419165}
+  m_LocalPosition: {x: -1.04, y: -0.92, z: -0.09419165}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 4678152407979210}
@@ -147,49 +117,18 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.8998871, y: -0.15682387}
-      - {x: 0.8515625, y: -0.17176223}
-      - {x: 0.79411316, y: -0.18400931}
-      - {x: 0.7345276, y: -0.1736486}
-      - {x: 0.6846924, y: -0.17446876}
-      - {x: 0.5453491, y: -0.18248487}
-      - {x: 0.44229126, y: -0.1863687}
-      - {x: 0.28800964, y: -0.23411822}
-      - {x: 0.16885376, y: -0.28709292}
-      - {x: -0.4734497, y: -0.30716014}
-      - {x: -0.98646545, y: -0.32771754}
-      - {x: -1.0046082, y: -0.5604367}
+    - - {x: 0.34375, y: 0.90625}
+      - {x: 0.09375, y: 0.71875}
+      - {x: 0.34375, y: 0.15625}
+      - {x: 0.6875, y: 0.125}
+      - {x: -0.34375, y: -0.53125}
+      - {x: -0.46875, y: -0.40625}
+      - {x: -1, y: -0.625}
       - {x: -1, y: -0.90625}
-      - {x: -1.0002136, y: -0.99255466}
       - {x: -0.875, y: -1}
       - {x: 1, y: -1}
-      - {x: 0.931427, y: -0.21929717}
-      - {x: 0.9076996, y: -0.1870153}
---- !u!61 &61496111627841926
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1419950317736578}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.01, y: 0.01}
-  m_EdgeRadius: 0
+      - {x: 1, y: 0.8125}
+      - {x: 0.8125, y: 0.90625}
 --- !u!95 &95023988157662072
 Animator:
   serializedVersion: 3
@@ -224,11 +163,10 @@ MonoBehaviour:
     type: 2}
   enemyHealth: 10
   corpse: {fileID: 1628816464706022, guid: 49051e40115ec34448ffcd099415361e, type: 2}
-  health: {fileID: 0}
-  player: {fileID: 0}
+  health: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
+  player: {fileID: 1144932962278882, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
   playerBlood: {fileID: 1730743259841294, guid: d95aad01a28cdc04f894f3e61a9cdd10,
     type: 2}
-  wallDistance: 0.5
   groundDetection: {fileID: 4958693535571670}
 --- !u!212 &212068498866865366
 SpriteRenderer:
