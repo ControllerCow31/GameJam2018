@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour {
 	private float speed;
-	public float distance;
+	public float distance = 0;
     public GameObject particleEffect;
     public float enemyHealth = 10;  
     public GameObject corpse;
     public PlayerHealth health;
     public GameObject player;
     public GameObject playerBlood;
+	public float wallDistance = 0.01f;
    
 
 
 	private bool movingRight = true;
 
 	public Transform groundDetection;
+
 	// Use this for initialization
 	void Start () {
 		speed = Random.Range(2, 5);
@@ -30,9 +32,13 @@ public class Patrol : MonoBehaviour {
 
 		RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, distance);
 
+
+
+
+
+
 		if (groundInfo.collider == false)
 		{
-            Debug.Log("flip");
 			if (movingRight == true)
 			{
 				transform.eulerAngles = new Vector3(0, -180, 0);
@@ -82,4 +88,22 @@ public class Patrol : MonoBehaviour {
         health.isDamaged = true;
 
     }
+
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.tag != "Player")
+			Debug.Log("whasssupppp");
+		{
+			if (movingRight == false)
+			{
+				transform.eulerAngles = new Vector3(0, 0, 0);
+				movingRight = true;
+			}
+			else
+			{
+				transform.eulerAngles = new Vector3(0, -180, 0);
+				movingRight = false;
+			}
+		}
+	}
 }
