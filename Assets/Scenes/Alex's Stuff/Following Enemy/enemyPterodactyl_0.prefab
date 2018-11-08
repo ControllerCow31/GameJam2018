@@ -37,9 +37,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1536658293476482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.71, y: 3.12, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -191.39151, y: 7.4832683, z: 0}
+  m_LocalScale: {x: 1.75, y: 1.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -143,8 +143,8 @@ MonoBehaviour:
   corpse: {fileID: 1014104136774370, guid: d856c5aa210e7344bbfe76076034f3fe, type: 2}
   playerBlood: {fileID: 1730743259841294, guid: d95aad01a28cdc04f894f3e61a9cdd10,
     type: 2}
-  health: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
-  player: {fileID: 1144932962278882, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
+  health: {fileID: 0}
+  player: {fileID: 0}
 --- !u!212 &212780382188795548
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -23,7 +23,7 @@ public class EnemyFollow : MonoBehaviour {
     void Update()
     {
 
-        if (Vector2.Distance(transform.position, target.position) > distance)
+        if (Vector2.Distance(transform.position, target.position) > distance && Vector2.Distance(transform.position, target.position) < 18)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             

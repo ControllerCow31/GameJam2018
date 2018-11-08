@@ -32,6 +32,7 @@ public class Patrol : MonoBehaviour {
 
 		if (groundInfo.collider == false)
 		{
+            Debug.Log("flip");
 			if (movingRight == true)
 			{
 				transform.eulerAngles = new Vector3(0, -180, 0);
