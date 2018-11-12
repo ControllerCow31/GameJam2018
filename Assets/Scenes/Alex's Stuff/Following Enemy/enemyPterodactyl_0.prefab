@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  distance: 0.5
+  distance: 0.7
   enemy: {fileID: 1536658293476482}
   enemyHealth: 10
   effect: {fileID: 1730743259841294, guid: 05facfa59a7db264fac8692b90fe411a, type: 2}

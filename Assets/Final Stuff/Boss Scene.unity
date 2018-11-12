@@ -4031,6 +4031,21 @@ Prefab:
       propertyPath: jumpSound
       value: 
       objectReference: {fileID: 8300000, guid: 93d679d1938b05b4d8a04afd88b54343, type: 3}
+    - target: {fileID: 212952622457096350, guid: aee5084541d788a48b49540ea87dfb5c,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c,
+        type: 2}
+      propertyPath: damage
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c,
+        type: 2}
+      propertyPath: isDamaged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
   m_IsPrefabAsset: 0
