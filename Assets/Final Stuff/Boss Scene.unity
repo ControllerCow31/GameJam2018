@@ -4039,12 +4039,22 @@ Prefab:
     - target: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c,
         type: 2}
       propertyPath: damage
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c,
         type: 2}
       propertyPath: isDamaged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114973557820418514, guid: aee5084541d788a48b49540ea87dfb5c,
+        type: 2}
+      propertyPath: graceTime
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421998424852456, guid: aee5084541d788a48b49540ea87dfb5c,
+        type: 2}
+      propertyPath: dashUsedThisJump
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aee5084541d788a48b49540ea87dfb5c, type: 2}
